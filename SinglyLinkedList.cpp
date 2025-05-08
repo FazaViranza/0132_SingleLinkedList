@@ -189,3 +189,7 @@ int main ()
                 cout << "Pilihan salah!." << endl;
             }
             break;
+        }
+    } while (ch != 5);   
+}
+ 
