@@ -117,7 +117,8 @@ int main()
     List mhs;
     int nim;
     char ch;
-    while (1)
+    
+    do
     {
         cout << "Menu" << endl;
         cout << endl;
@@ -136,23 +137,20 @@ int main()
             break;
         }
 
-        case '2':
+         case '2':
         {
             if (mhs.listEmpty())
             {
-                cout << endl
-                     << "List Kosong" << endl;
+                cout << endl << "List Kosong" << endl;
                 break;
             }
-            cout << endl
-                 << "\nMasukkan no mahasiswa yang akan dihapus : ";
+            cout << endl << "\nMasukkan no mahasiswa yang akan dihapus : ";
             cin >> nim;
             if (mhs.delNode(nim) == false)
-                cout << endl
-                     << "Data tidak ditemukan" << endl;
+                cout << endl << "Data tidak ditemukan" << endl;
             else
-                cout << endl
-                     << "Data dengan nomor mahasiswa " << nim << " berhasil dihapus " << endl; 
+                cout << endl << "Data dengan nomor mahasiswa " << nim << " berhasil dihapus " << endl;
+            break; 
         }
 
         case '3':
@@ -186,18 +184,15 @@ int main()
         break;
         case '5':
         {
-            cout << "Keluar dari program.\n";
-            break;
         }
+        break;
         default:
         {
             cout << "Pilihan salah !." << endl;
-            break;
         }
-        
+        break;
         }
     } while (ch != '5');
-
+    
     return 0;
-
 }
