@@ -58,3 +58,32 @@ public:
     {
         return (START == NULL);
     }
+    
+    bool Search(int nim, Node **previous, Node **current)
+    {
+        *previous = *current;
+        *current = (*current)->next;
+
+        while ((*current != NULL) && (nim != (*current)->noMhs))
+        {
+            *previous = *current;
+            *current = (*current)->next;
+        }
+
+        return (*current != NULL);
+    }
+
+    bool delNode(int nim)
+    {
+        Node *current, *previous;
+        if (!Search(nim, &previous,  &current))
+            return false;
+
+        if (current == START) 
+            START = START->next;
+        else
+            previous->next = current->next;
+
+        delete current;
+        return true;
+    }
