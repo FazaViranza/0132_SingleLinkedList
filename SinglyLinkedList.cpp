@@ -151,3 +151,8 @@ int main ()
                         << "Data dengan nomor mahasiswa" << nim << "berhasil dihapus" << endl;
             }
             break;
+            case '3' :
+            {
+                mhs.traverse();
+            }
+            break;
